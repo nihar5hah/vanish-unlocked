@@ -1,4 +1,5 @@
-Vanish Unlocker.app/
-Vanish Unlocker.zip
+build-work/
+*.zip
+*.app
 *.ipa
 .DS_Store

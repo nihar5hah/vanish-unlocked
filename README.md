@@ -1,5 +1,13 @@
 # vanish-unlocked
 
+**The app itself, pre-unlocked: [Vanish v2.0 release](../../releases/tag/v2.0)** —
+download `Vanish-app.zip`, unzip, right-click → Open (once). That's the whole
+install. The app runs fully paid with zero setup — no unlocker, no terminal,
+no server, and it never contacts the developer's backend. Its own
+"Install Vanish Mobile" button installs the **pre-patched iPhone app**
+(no deny path, no session auto-stop, Saved Places / Location Lock open) —
+your Apple ID once, inside the app's own flow.
+
 Tools + analysis for unlocking **Vanish** (a commercial iPhone GPS spoofer:
 an Electron desktop app that signs and installs an iOS app which spoofs
 location over an on-device RemotePairing tunnel) on your own machines.
@@ -22,22 +30,17 @@ Two unlock routes, both fully worked and verified on real hardware:
 
 ## Quick start
 
-**Easiest (out of the box):** download **`Vanish Unlocker.zip`** from
-[releases](../../releases) — one native app, zero dependencies, two buttons:
+**Out of the box (v2.0, recommended):** download **`Vanish-app.zip`** from
+[releases](../../releases) — the complete pre-unlocked app (details above).
 
-- **Open Vanish (Mac) — paid** — launches Vanish fully paid; stops its
-  embedded server when Vanish quits; nothing persists
-- **Unlock the iPhone app** — patches the stock IPA with the embedded
-  patcher and drives the sideloader: your Apple ID once (+2FA if asked),
-  and the phone app installs unlocked over the existing one
+**Alternative packages** (the same machinery, unbundled):
 
-Requires the Vanish desktop app installed (the unlocker drives its
-sideloader helper and reads the stock mobile IPA from it). First launch of
-the unlocker: right-click → Open (once) — it's ad-hoc signed.
+- `Vanish Unlocker.zip` (v1.0) — a tiny native companion app: launches your
+  existing stock Vanish as paid (embedded server + one env var), or patches +
+  installs the iPhone app through the stock desktop's own sideloader
+- the scripts below, for those who want the pieces visible
 
-**Manual routes** (the same machinery as scripts):
-
-### Desktop
+### Desktop (manual route)
 
 ```bash
 cd desktop-redirect
