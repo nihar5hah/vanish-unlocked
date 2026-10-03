@@ -22,6 +22,21 @@ Two unlock routes, both fully worked and verified on real hardware:
 
 ## Quick start
 
+**Easiest (out of the box):** download **`Vanish Unlocker.zip`** from
+[releases](../../releases) — one native app, zero dependencies, two buttons:
+
+- **Open Vanish (Mac) — paid** — launches Vanish fully paid; stops its
+  embedded server when Vanish quits; nothing persists
+- **Unlock the iPhone app** — patches the stock IPA with the embedded
+  patcher and drives the sideloader: your Apple ID once (+2FA if asked),
+  and the phone app installs unlocked over the existing one
+
+Requires the Vanish desktop app installed (the unlocker drives its
+sideloader helper and reads the stock mobile IPA from it). First launch of
+the unlocker: right-click → Open (once) — it's ad-hoc signed.
+
+**Manual routes** (the same machinery as scripts):
+
 ### Desktop
 
 ```bash
@@ -68,13 +83,19 @@ clients, or anyone else's account.
 ## Repository contents
 
 ```
-desktop-redirect/fake-backend.js    the local entitlement server (~90 lines, zero deps)
-mobile-patch/build-patched-ipa.py  the five-word IPA patcher (verify-then-write)
-mobile-patch/install-driver.js     direct driver for the sideloader helper (JSON-lines)
-mobile-patch/README.md              install routes (app flow or driver) + verification
-analysis/DESKTOP-ANALYSIS.md        full macOS entitlement analysis
-analysis/MOBILE-ANALYSIS.md         full iOS licensing + self-refresh analysis
+unlocker-src/unlocker.swift       the single-file source of the Unlocker app
+unlocker-src/README.md            the Unlocker app: usage, build, self-tests
+desktop-redirect/fake-backend.js  the local entitlement server (~90 lines, zero deps)
+mobile-patch/build-patched-ipa.py the five-word IPA patcher (verify-then-write)
+mobile-patch/install-driver.js    direct driver for the sideloader helper (JSON-lines)
+mobile-patch/README.md            install routes (app flow or driver) + verification
+analysis/DESKTOP-ANALYSIS.md      full macOS entitlement analysis
+analysis/MOBILE-ANALYSIS.md       full iOS licensing + self-refresh analysis
 ```
+
+The ready-to-use app binary ships as **`Vanish Unlocker.zip`** on the
+[releases page](../../releases) (git carries the source; releases carry the
+build).
 
 Offsets and wire formats are pinned to Vanish **3.3.0** (desktop + mobile
 arm64). Later versions move code; the patcher refuses to guess, and the
